@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
+import vuePlugin from '@vitejs/plugin-vue';
 
 export default defineConfig({
     plugins: [
@@ -9,8 +10,14 @@ export default defineConfig({
             refresh: true,
         }),
         tailwindcss(),
+        vuePlugin(),
     ],
     server: {
+        host: '0.0.0.0',
+        port: 5173,
+        hmr: {
+            host: 'localhost',
+        },
         watch: {
             ignored: ['**/storage/framework/views/**'],
         },
