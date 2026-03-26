@@ -22,7 +22,7 @@ Defines who interacts with the system and what external systems it depends on.
 
 ### Level 2 — Container
 
-Shows the high-level technology choices and how responsibilities are distributed across containers (web app, API, database, queue, cache).
+Shows the high-level technology choices and how responsibilities are distributed across containers (Laravel + Inertia.js + Vue 3, database).
 
 ![C4 Level 2 — Container](docs/c4/level-2-dark.png)
 
