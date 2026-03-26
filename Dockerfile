@@ -22,6 +22,11 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install pdo pdo_pgsql pgsql
 RUN docker-php-ext-install mbstring exif pcntl bcmath zip
 
+# Node.js 24.x (LTS)
+RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
