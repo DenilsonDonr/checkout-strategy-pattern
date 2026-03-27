@@ -32,7 +32,7 @@ Zooms into the application and shows how the Strategy Pattern is structured — 
 
 | Layer          | Technology               |
 | -------------- | ------------------------ |
-| Backend        | Laravel 13 (PHP 8.3)     |
+| Backend        | Laravel 13 (PHP 8.5)     |
 | Frontend       | Vue 3 + Inertia.js       |
 | Styling        | Tailwind CSS v4          |
 | Database       | PostgreSQL 16            |
@@ -56,6 +56,8 @@ PaymentGatewayInterface
 ```
 
 **Why Strategy?** The checkout flow is identical for every payment method. Without this pattern, you'd end up with a chain of `if/elseif` blocks in the controller that grows every time a new gateway is added. Strategy isolates each gateway's logic and satisfies the Open/Closed Principle — new gateways require zero changes to existing code.
+
+> **Implementation note:** Of the three gateways, only **Stripe** is integrated with a real API (Stripe PaymentIntent). PayPal and Bank Transfer are simulated implementations that demonstrate the pattern — replacing them with real SDKs would only require changes inside their respective gateway classes, with zero impact on the rest of the system.
 
 ### Factory Pattern
 
