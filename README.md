@@ -242,7 +242,7 @@ You can verify the transaction in your Stripe Dashboard under **Payments**.
 ## Testing
 
 ```bash
-# Run all tests (27 tests, 62 assertions)
+# Run all tests (26 tests, 61 assertions)
 docker compose exec app php artisan test
 
 # Run only unit tests
